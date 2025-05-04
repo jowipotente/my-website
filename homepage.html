@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>LockOS</title>
+    <link rel="stylesheet" type="text/css" href="homecss.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="root-nav">
+        <div class="whole-nav">
+            <header class="bg-[#7393C2] px-6 py-3 flex flex-wrap items-center justify-between w-full">
+                <div class="flex items-center gap-40 flex-wrap">
+                    <img src="https://img.icons8.com/ios-filled/50/lock--v1.png" alt="lock icon" class="w-8 h-8" />
+                    <nav class="flex gap-6 text-white font-medium">
+                        <a href="#" class="hover:text-gray-200"> Home</a>
+                        <a href="#" class="hover:text-gray-200"> About</a>
+                        <a href="addtocart.html"> Pricing </a>
+                        <a href="#" class="hover:text-gray-200"> Documentation </a>
+                    </nav>
+                </div>
+
+                <div class="registration">
+                    <form class="login-form" id="login-form">
+                        <div class="input-group">
+                            <div class="form-field">
+                                <label for="username">Username</label>
+                                <input type="text" id="username" placeholder="Enter username">
+                            </div>
+                            <div class="form-field">
+                                <label for="password">Password</label>
+                                <input type="password" id="password" placeholder="Enter password">
+                            </div>
+                            <button type="submit" class="submit-btn">Submit</button>
+                        </div>
+                        <div class="links">
+                            <a href="register.html">Register an account.</a>
+                            <a href="#"> Forgot username and password? Reset</a>
+                        </div>
+                    </form>
+                    <div id="error-message" style="color: red; margin-top: 10px;"></div>
+                </div>
+            </header>
+        </div>
+    </div>
+
+    <div class="hero-section">
+        <h1>LOCK</h1>
+        <p>THE FUTURE OF DIGITAL PRIVACY AND SECURITY</p>
+        <button class="get-started">
+            <span>🔒 GET STARTED</span>
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

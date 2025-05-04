@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+  <meta charset = "UTF-8" />
+  <meta name = "viewport" content="width=device-width, initial-scale=1.0" />
+  <title> Pricing Page </title>
+  <script src = "https://cdn.tailwindcss.com"></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+    .title-font {
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .clickable-box {
+        cursor: pointer;
+    }
+  </style>
+
+</head>
+
+    <body class = "bg-[#1E2B3A] text-black font-sans">
+
+        <header class="bg-[#7393C2] px-6 py-3 flex flex-wrap items-center justify-between w-full">
+            <div class="flex items-center gap-40 flex-wrap">
+                <img src = "https://img.icons8.com/ios-filled/50/lock--v1.png" alt = "lock icon" class = "w-8 h-8" />
+          
+              <nav class="flex gap-6 text-white font-medium">
+                <a href ="homepage.html" class = "hover:text-gray-200"> Home</a>
+                <a href ="#" class = "hover:text-gray-200"> About</a>
+                <a href ="addtocart.html" class = "bg-gray-400 text-black px-3 py-1 rounded"> Pricing</a>
+                <a href ="#" class = "hover:text-gray-200"> Documentation</a>
+              </nav>
+            </div>
+          
+            <div class="flex items-center gap-3 text-white mt-3 sm:mt-0">
+              <span class="font-semibold"> Malzahar02 </span>
+            </div>
+          </header>
+          
+    <main class = "bg-white m-10 p-10 rounded-xl text-center shadow-xl">
+        <h1 class = "text-3xl font-bold title-font mb-12 tracking-wider"> CHOOSE A VERSION </h1>
+    
+        <div class = "flex justify-center gap-12">
+            <a href = "payment.html?version=Basic" class = "hover:text-blue-200">
+            <div class = "border rounded-md p-6 w-64 shadow-sm">
+                <h2 class = "font-bold text-lg mb-4">Basic</h2>
+                    <ul class = "text-left list-disc ml-4 space-y-1 text-sm">
+                        <li> basic OS features </li>
+                        <li> 2-3 available proxy servers </li>
+                        <li> no customer support </li>
+                        <li> access to basic OS updates </li>
+                        <li> free </li>
+                    </ul>
+            </div>
+            </a>
+
+            <a href = "payment.html?version=Enterprise" class = "hover:text-blue-200">
+            <div class = "border rounded-md p-6 w-64 shadow-sm">
+                <h2 class = "font-bold text-lg mb-4"> Enterprise </h2>
+                    <ul class = "text-left list-disc ml-4 space-y-1 text-sm">
+                        <li> advanced OS features </li>
+                        <li> unlimited access to proxy servers </li>
+                        <li> with customer support </li>
+                        <li> access to enterprise OS updates </li>
+                        <li> $90 USD </li>
+                    </ul>
+            </div>
+            </a>
+        </div>
+
+        <div class="mt-12 flex justify-between items-center w-[400px] mx-auto" style = "padding-bottom: 13%;">
+            <span class="text-[80px] font-bold title-font">LOCK</span>
+            <img src="https://img.icons8.com/ios-filled/50/lock--v1.png" class="w-20 h-auto" />
+          </div>
+          
+          
+        <div class = "fixed bottom-8 right-12">
+            <img src = "https://img.icons8.com/ios-glyphs/30/home.png" class = "w-6 h-6" />
+        </div>
+    </main>
+
+    </body>
+
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset = "UTF-8" />
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0" />
+    <title> Payment Page </title>
+    <script src = "https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+        .title-font {
+        font-family: 'Orbitron', sans-serif;
+        }
+    </style>
+</head>
+
+<body class = "bg-[#1E2B3A] text-black font-sans">
+
+    <header class="bg-[#7393C2] px-6 py-3 flex flex-wrap items-center justify-between w-full">
+        <div class="flex items-center gap-40 flex-wrap">
+            <img src = "https://img.icons8.com/ios-filled/50/lock--v1.png" alt = "lock icon" class = "w-8 h-8" />
+      
+          <nav class = "flex gap-6 text-white font-medium">
+            <a href = "#" class = "hover:text-gray-200"> Home</a>
+            <a href ="#" class = "hover:text-gray-200"> About</a>
+            <a href ="addtocart.html" class = "bg-gray-400 text-black px-3 py-1 rounded"> Pricing </a>
+            <a href = "#" class = "hover:text-gray-200"> Documentation </a>
+          </nav>
+        </div>
+      
+        <div class = "flex items-center gap-3 text-white mt-3 sm:mt-0">
+          <div class = "w-8 h-8 bg-gray-300 rounded-full"></div>
+          <span class="font-semibold"> Malzahar02 </span>
+          <div class="text-3xl">≡</div>
+        </div>
+      </header>
+
+      <main class = "bg-white m-6 md:m-10 p-6 md:p-10 rounded-xl shadow-xl flex flex-col md:flex-row justify-between items-center gap-8">
+
+        <div class = "w-full md:w-1/2" style = "font-size: 25px;">
+              <h1 class = "text-4xl font-bold title-font text-center md:text-left mb-8" style = "padding-left: 110px; padding-bottom: 50px;"> PAYMENT </h1>
+              
+                <form class = "space-y-6 max-w-md mx-auto md:mx-0">
+                    <div class = "flex justify-between items-center">
+                        <label for = "payment-method" class="font-medium"> Choose payment method: </label>
+                        <select id = "payment-method" class="border px-3 py-1 w-40">
+                            <option> GCash </option>
+                            <option> PayPal </option>
+                            <option> Card </option>
+                        </select>
+                    </div>
+        
+                    <div class = "flex justify-between items-center">
+                        <label for = "version" class = "font-medium"> Choose version: </label>
+                        <select id = "version" class = "border px-3 py-1 w-60">
+                            <option> Enterprise (2024.1) </option>
+                            <option> Basic (2024.1) </option>
+                        </select>
+                    </div>
+
+                    <hr class = "my-4 border-gray-400" />
+        
+                    <div class = "flex justify-between items-center">
+                        <span class = "font-medium"> Amount rendered: </span>
+                        <span class = "font-semibold amount-rendered"> $90.00 USD </span>
+                    </div>
+               </form>
+        </div>
+        
+        <div class = "w-full md:w-1/2 flex items-center justify-center md:justify-end">
+            <p class = "title-font text-4xl leading-tight md:text-6xl font-bold text-center md:text-right" style = "padding-top: 20%; padding-bottom: 26%; padding-right: 60px; max-width: 400px; margin-left: auto; margin-right: auto; text-align: center;">
+                BUILD YOUR DIGITAL LIFE TOWARDS PRIVACY AND SECURITY!
+            </p>
+        </div>
+        
+        <div class = "fixed bottom-8 right-12">
+            <img src = "https://img.icons8.com/ios-glyphs/30/home.png" class="w-6 h-6" />
+        </div>
+        
+        </main>
+        
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+              function getUrlParam(name) {
+                name = name.replace(/[\[\]]/g, '\\$&');
+                var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                    results = regex.exec(window.location.href);
+                if (!results) return null;
+                if (!results[2]) return '';
+                return decodeURIComponent(results[2].replace(/\+/g, ' '));
+              }
+        
+              const selectedVersion = getUrlParam('version');
+              const versionDropdown = document.getElementById('version');
+              const amountRenderedSpan = document.querySelector('.amount-rendered');
+        
+              if (selectedVersion && versionDropdown && amountRenderedSpan) {
+                for (let i = 0; i < versionDropdown.options.length; i++) {
+                  if (versionDropdown.options[i].textContent.toLowerCase().includes(selectedVersion.toLowerCase())) {
+                    versionDropdown.selectedIndex = i;
+                    updateAmount(versionDropdown.value); 
+                    break;
+                  }
+              }
+            }
+        
+              if (versionDropdown && amountRenderedSpan) {
+                versionDropdown.addEventListener('change', function() {
+                  updateAmount(this.value);
+                });
+              }
+        
+              function updateAmount(selectedVersionValue) {
+                if (selectedVersionValue.toLowerCase().includes('basic')) {
+                  amountRenderedSpan.textContent = '$0.00 USD';
+                } else if (selectedVersionValue.toLowerCase().includes('enterprise')) {
+                  amountRenderedSpan.textContent = '$90.00 USD';
+                }
+              }
+            });
+          </script>
+        
+        </body>
+        </html>
